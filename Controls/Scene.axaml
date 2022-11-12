@@ -5,13 +5,17 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Controls.Scene">
   <Grid RowDefinitions="*,0.25*">
-      <ItemsControl Items="{TemplateBinding ImageCollection}">
-          <ItemsPanelTemplate>
-             <Panel/>
-          </ItemsPanelTemplate>
-          <DataTemplate>
-              <Image></Image>
-          </DataTemplate>
+      <ItemsControl Items="{Binding $parent[UserControl].ImageCollection}">
+          <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                  <Canvas></Canvas>
+              </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ItemsControl.DataTemplates>
+              <DataTemplate>
+                  <Image Source="{Binding}"></Image>
+              </DataTemplate>
+          </ItemsControl.DataTemplates>
       </ItemsControl>
       <TextBlock Grid.Row="1"> fdsfdsdf</TextBlock>
   </Grid>

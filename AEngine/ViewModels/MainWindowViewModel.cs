@@ -9,8 +9,8 @@ namespace AEngine.ViewModels
 
         public string[] Images
         {
-            get { return _images; }
-            set { this.RaiseAndSetIfChanged(ref _images,value);}
+            get => _images;
+            set  => this.RaiseAndSetIfChanged(ref _images,value);
         }
 
         public void Do()
